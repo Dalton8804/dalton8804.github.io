@@ -49,8 +49,8 @@ a:hover { text-decoration: none; color:grey; }
 }
 
 .display-image{
-  height:200%;
-  width:200%;
+  height:400px;
+  width:400px;
 }
 
 .card {
