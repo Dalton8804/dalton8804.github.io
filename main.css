@@ -11,7 +11,7 @@ p, body {
 
 a { color:black } /* Globally */
 a:visited, a:focus, a:active { text-decoration: none; color:black; }
-a:hover { text-decoration: none; color:white; }
+a:hover { text-decoration: none; color:grey; }
 
 .first-flex {
   display: flex;
