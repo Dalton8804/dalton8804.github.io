@@ -48,6 +48,11 @@ a:hover { text-decoration: none; color:grey; }
   padding-right: 10px;
 }
 
+.display-image{
+  height:200%;
+  width:200%;
+}
+
 .card {
   height: 200px;
   width: 200px;
