@@ -11,6 +11,7 @@
   <title>dalton | home</title>
 </head>
 <body>
+  <canvas id="myCanvas" style="position: fixed; top: 0; z-index: -1;"></canvas>
   <main>
     <aside class="left-aside">
       <ul id="menu">
@@ -33,13 +34,14 @@
     </aside>
     <div id="main-container">
       <header id="main-header">dalton avery</header>
-      <main id="main-content"></main>
+      <main id="main-content">This is a relatively long main message talking about who dalton is, this content will eventually be offloaded into a markdown and read in using js.</main>
     </div>
     <aside class="right-aside"></aside>
     <div id="theme-toggle" onclick="themeTog()">⏾</div>
   </main>
-
+  
   <script src="main.js"></script>
+  <script src="chain.js"></script>
 </body>
 
 </html>

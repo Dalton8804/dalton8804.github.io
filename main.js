@@ -5,7 +5,7 @@ function load(key) {
   fetch(`resources/${key}.md`)
     .then(response => {
       if (!response.ok) {
-        throw new Error(`could not load`);
+        throw new Error(`could not load ${key}`);
       }
       return response.text();
     })
@@ -13,8 +13,12 @@ function load(key) {
       contentElement.innerHTML = marked.parse(markdown);
     })
     .catch(error => {
-      contentElement.innerHTML = `<p>Error: ${error.message} ${key}</p>`;
+      contentElement.innerHTML = `<p>Error: ${error.message}</p>`;
     });
+
+    // close mobile menu if on mobile
+    if (mobileMenuIcon.innerText == 'x')
+      burgerTog();
 }
 
 function burgerTog() {
@@ -32,12 +36,12 @@ function burgerTog() {
 function themeTog() {
   if (themeIcon.innerText == '☀︎') {
     themeIcon.innerText = '⏾';
-    root.style.setProperty('--text-color', 'black');
-    root.style.setProperty('--background', 'white');
+    root.style.setProperty('--foreground-color', 'black');
+    root.style.setProperty('--background-color', 'white');
   } else {
     themeIcon.innerText = '☀︎';
-    root.style.setProperty('--text-color', 'white');
-    root.style.setProperty('--background', 'black');
+    root.style.setProperty('--foreground-color', 'white');
+    root.style.setProperty('--background-color', 'black');
   }
 }
 
