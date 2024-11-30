@@ -424,7 +424,7 @@ let paused = false;
 let game = setInterval(() => {
     backgroundColor = getComputedStyle(root).getPropertyValue("--background-color");
     foregroundColor = getComputedStyle(root).getPropertyValue("--foreground-color");
-    canvas.style.background = backgroundColor;
+    canvas.style.background = 'rgb('+backgroundColor+')';
 
     if (!paused) {
         ctx.clearRect(0,0,canvas.width, canvas.height);
