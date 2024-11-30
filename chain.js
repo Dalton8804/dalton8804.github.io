@@ -14,8 +14,8 @@ class Spine {
         } 
     }
 
-    resolveAngle(target) {
-        this.joints[0].update(target)
+    resolveAngle(target, speed) {
+        this.joints[0].update(target, speed)
 
         for (let i=1; i<this.joints.length; i++) {
             const prev = this.joints[i-1];
@@ -118,15 +118,15 @@ class Joint {
         return Math.atan2(prev.y - curr.y, prev.x - curr.x);
     }
 
-    update(target) {
+    update(target, speed) {
         const desiredAngle = Joint.sub(target, this).heading;
         const angleDiff = desiredAngle - this.angle;
 
         const normalizedAngle = (angleDiff + Math.PI) % (2 * Math.PI) - Math.PI;
         this.angle += Math.sign(normalizedAngle) * Math.min(Math.abs(normalizedAngle), 0.05) // 0.05 is maxTurnRate
 
-        this.x += Math.cos(this.angle) * 4;
-        this.y += Math.sin(this.angle) * 4;
+        this.x += Math.cos(this.angle) * speed;
+        this.y += Math.sin(this.angle) * speed;
     }
 
     draw(context) {
@@ -197,11 +197,13 @@ class Fish {
 
         this.bodycolor = "#1d4863";
         this.fincolor = "#219e9a";
+        
         this.speed = 4;
+        this.timeSinceLastTargetHit = 0;
     }
 
     get strokeColor() {
-        return backgroundColor == "white" ? "black" : "white"; 
+        return backgroundColor == "255,255,255" ? "0,0,0" : "255,255,255"; 
     }
     
     draw() {
@@ -211,7 +213,14 @@ class Fish {
         this.drawCaudalFin();
         this.drawEyes();
         this.drawDorsalFin();
+        this.drawKoiSpots();
         // this.spine.draw(this.context);
+    }
+
+    drawKoiSpots() {
+        let ctx = this.context;
+
+        // TODO: implement if ever care to
     }
 
     drawDorsalFin() {
@@ -225,7 +234,7 @@ class Fish {
         ]
 
         ctx.fillStyle = this.fincolor;
-        ctx.strokeStyle = this.strokeColor;
+        ctx.strokeStyle = 'rgb(' + this.strokeColor + ')';
 
         this.curveVertexFromPoints(ctx, backVertices);
     }
@@ -235,7 +244,7 @@ class Fish {
         
         let eyeholes = this.spine.joints[0].eyeVertices;
 
-        ctx.fillStyle = this.strokeColor;
+        ctx.fillStyle = 'rgb(' + this.strokeColor + ')';
         // ctx.strokeStyle = this.strokeColor;
 
         ctx.beginPath();
@@ -313,18 +322,6 @@ class Fish {
         points.push(...this.spine.joints[0].headVertices)
         points.push(this.spine.joints[0].leftVertex);
 
-        // uncomment to draw body with lines
-        // for (let i=1; i<points.length; ++i) {
-        //     this.spine.line(this.context, points[i-1], points[i]);
-
-        //     this.context.beginPath();
-        //     this.context.arc(points[i].x, points[i].y, 2, 0,  TAO);
-        //     this.context.lineWidth = 2; // Adjust the width of the outline
-        //     this.context.strokeStyle = "red";
-        //     this.context.stroke();
-        //     this.context.closePath();
-        // }
-
         this.curveVertexFromPoints(this.context, points);
     }
 
@@ -377,13 +374,17 @@ class Fish {
 
     resolve() {
         let headPos = this.spine.joints[0];
-        if (Joint.dist(this._target, headPos) < 40)
+        if (Joint.dist(this._target, headPos) < 40 || this.timeSinceLastTargetHit > 400) {
             this._target = this.#newTarget;
+            this.timeSinceLastTargetHit = 0;
+        }
         
-        this.spine.resolveAngle(this._target);
+        this.spine.resolveAngle(this._target, this.speed);
+        this.timeSinceLastTargetHit++;
     }
     
     get #newTarget() {
+        this.speed = Math.random() * 7 + 4;
         let temp = new Joint(Math.random() * window.innerWidth, Math.random() * window.innerHeight, 5);
         while (Joint.dist(temp, this.spine.joints[0]) < 400) {
             temp = new Joint(Math.random() * Math.max(1000, window.innerWidth), Math.random() * window.innerHeight, 5);
@@ -392,8 +393,8 @@ class Fish {
     }
 }
 
-let backgroundColor = "black";
-let foregroundColor = "white";
+let backgroundColor = "255,255,255";
+let foregroundColor = "0,0,0";
 
 const height = window.innerHeight;
 const width = window.innerWidth;

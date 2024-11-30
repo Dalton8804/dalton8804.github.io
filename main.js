@@ -36,12 +36,12 @@ function burgerTog() {
 function themeTog() {
   if (themeIcon.innerText == '☀︎') {
     themeIcon.innerText = '⏾';
-    root.style.setProperty('--foreground-color', 'black');
-    root.style.setProperty('--background-color', 'white');
+    root.style.setProperty('--foreground-color', '0,0,0');
+    root.style.setProperty('--background-color', '255,255,255');
   } else {
     themeIcon.innerText = '☀︎';
-    root.style.setProperty('--foreground-color', 'white');
-    root.style.setProperty('--background-color', 'black');
+    root.style.setProperty('--foreground-color', '255,255,255');
+    root.style.setProperty('--background-color', '0,0,0');
   }
 }
 
