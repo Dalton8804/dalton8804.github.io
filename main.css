@@ -76,12 +76,12 @@ aside {
   font-size: x-large;
 }
 
-#theme-toggle {
+.toggle {
   z-index: 1;
   width: 2rem;
   position: fixed;
   right: 1rem;
-  top: 1rem;
+  /* top: 1rem; */
   /* background-color: var(--background-color); */
   border: solid rgb(var(--foreground-color));
   border-radius: 5px;
@@ -89,6 +89,15 @@ aside {
   text-align: center;
   font-size: x-large;
 }
+
+#theme-toggle {
+  top: 1rem;
+}
+
+#exit-fish-play {
+  top: 1rem;
+  display: none;
+} 
 
 @media (max-width: 768px) {
   .right-aside {

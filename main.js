@@ -45,10 +45,27 @@ function themeTog() {
   }
 }
 
+function bodyToggle(sw) {
+  const bodyMain = document.getElementById("bodyMain");
+  const exitFishPlay = document.getElementById("exit-fish-play");
+  if (sw === 'off') {
+    exitFishPlay.style.display = "block";
+    bodyMain.style.display = "none";
+    playingWithFish = true;
+  } else if (sw === 'on') {
+    exitFishPlay.style.display = "none";
+    bodyMain.style.display = "flex";
+    playingWithFish = false;
+  }
+  
+}
+
 const mobMenu = document.getElementById("mobile-menu");
 const mobileMenuIcon = document.getElementById("mobile-menu-icon");
 const themeIcon = document.getElementById("theme-toggle");
 const root = document.querySelector(':root');
+
+playingWithFish = false;
 
 onresize = () => {
   if (window.innerWidth > 768) {

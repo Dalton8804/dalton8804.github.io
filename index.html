@@ -12,7 +12,7 @@
 </head>
 <body>
   <canvas id="myCanvas" style="position: fixed; top: 0; z-index: -1;"></canvas>
-  <main>
+  <main id="bodyMain">
     <aside class="left-aside">
       <ul id="menu">
         <li onclick="load('home')"><h3>home</h3></li>
@@ -20,6 +20,7 @@
         <li onclick="load('books')">books</li>
         <li onclick="load('notes')">notes</li>
         <li onclick="load('blog')">blog</li>
+        <li onclick="load('fish')">fish</li>
       </ul>
       <div id="mobile-menu-icon" onclick="burgerTog()">
         ≡
@@ -37,11 +38,12 @@
       <main id="main-content"></main>
     </div>
     <aside class="right-aside"></aside>
-    <div id="theme-toggle" onclick="themeTog()">⏾</div>
+    <div id="theme-toggle" class="toggle" onclick="themeTog()">⏾</div>
   </main>
+  <div id="exit-fish-play" class="toggle" onclick="bodyToggle('on')">x</div>
   
   <script src="main.js"></script>
-  <script src="chain.js"></script>
+  <script src="fish.js"></script>
 </body>
 
 </html>

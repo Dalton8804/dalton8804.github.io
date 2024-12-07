@@ -207,7 +207,9 @@ class Fish {
     }
     
     draw() {
-        // this._target.draw(this.context);
+        if (this._target.radius == 12.1) {
+            this._target.draw(this.context);
+        }
         this.drawPectoralFins();
         this.drawFishBody();
         this.drawCaudalFin();
@@ -391,6 +393,10 @@ class Fish {
         }
         return temp;
     }
+
+    forceSetTarget(joint) {
+        this._target = joint;
+    }
 }
 
 let backgroundColor = "255,255,255";
@@ -436,9 +442,11 @@ let game = setInterval(() => {
 }, 16)
 
 canvas.addEventListener('click', event => { 
-    // if (trackMouse) {
-    //     let coords = getCursorPosition(canvas, event);
-    //     target = new Vector(coords.x, coords.y);
-    // }
+    if (playingWithFish) {
+        let coords = getCursorPosition(canvas, event);
+        target = new Joint(coords.x, coords.y, 12.1);
+        let i = Math.floor(Math.random() * fishList.length)
+        fishList[i].forceSetTarget(target);
+    }
     // paused = !paused;
 }, false);
