@@ -199,6 +199,8 @@ class Fish {
         this.fincolor = "#219e9a";
         
         this.speed = 4;
+        this.speedTarget = 4;
+        this.speedIncrement = .05;
         this.timeSinceLastTargetHit = 0;
     }
 
@@ -381,12 +383,21 @@ class Fish {
             this.timeSinceLastTargetHit = 0;
         }
         
+        if (this.speedTarget !== this.speed) {
+            console.log(this.speed);
+            if (this.speedTarget > this.speed) {
+                this.speed = Math.round((this.speed + this.speedIncrement) * 100) / 100;
+            } else if (this.speedTarget < this.speed) {
+                this.speed = Math.round((this.speed - this.speedIncrement) * 100) / 100;
+            }
+        }
+        
         this.spine.resolveAngle(this._target, this.speed);
         this.timeSinceLastTargetHit++;
     }
     
     get #newTarget() {
-        this.speed = Math.random() * 7 + 4;
+        this.speedTarget = Math.random() * 7 + 4;
         let temp = new Joint(Math.random() * window.innerWidth, Math.random() * window.innerHeight, 5);
         while (Joint.dist(temp, this.spine.joints[0]) < 400) {
             temp = new Joint(Math.random() * Math.max(1000, window.innerWidth), Math.random() * window.innerHeight, 5);
