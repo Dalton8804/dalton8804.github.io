@@ -384,7 +384,6 @@ class Fish {
         }
         
         if (this.speedTarget !== this.speed) {
-            console.log(this.speed);
             if (this.speedTarget > this.speed) {
                 this.speed = Math.round((this.speed + this.speedIncrement) * 100) / 100;
             } else if (this.speedTarget < this.speed) {
