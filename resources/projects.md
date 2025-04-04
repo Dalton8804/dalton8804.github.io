@@ -5,7 +5,7 @@
 
 ## Personal
 
-### NoteDrop
+### [NoteDrop](https://github.com/Dalton8804/NoteDrop)
 
 ### Fish
 - inspired by argonautcode on youtube
