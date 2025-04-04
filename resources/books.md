@@ -3,7 +3,7 @@
 
 ## In Progress
 
-### Assassin's Blade
+### Empire of Storms
 
 ## 2025
 
@@ -11,6 +11,8 @@
 ### Crown of Midnight
 ### Thinking in Systems: A Primer
 ### Heir of Fire
+### Assassin's Blade
+### Queen of Shadows
 
 ## 2024
 
