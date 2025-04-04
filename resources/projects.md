@@ -5,7 +5,7 @@
 
 ## Personal
 
-### Flow + Flow Relay
+### NoteDrop
 
 ### Fish
 - inspired by argonautcode on youtube
