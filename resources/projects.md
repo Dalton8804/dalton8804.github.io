@@ -7,6 +7,8 @@
 
 ### [NoteDrop](https://github.com/Dalton8804/NoteDrop)
 
+### [Thu'um](https://thuum.daltonavery.com/)
+
 ### Fish
 - inspired by argonautcode on youtube
 
