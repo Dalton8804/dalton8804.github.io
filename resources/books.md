@@ -3,7 +3,7 @@
 
 ## In Progress
 
-### Empire of Storms
+### Tower of Dawn
 
 ## 2025
 
@@ -13,6 +13,7 @@
 ### Heir of Fire
 ### Assassin's Blade
 ### Queen of Shadows
+### Empire of Storms
 
 ## 2024
 
