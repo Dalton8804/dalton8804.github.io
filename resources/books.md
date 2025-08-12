@@ -3,7 +3,7 @@
 
 ## In Progress
 
-### Kingdom of Ash
+### Heretics of Dune
 
 ## 2025
 
@@ -15,6 +15,9 @@
 ### Queen of Shadows
 ### Empire of Storms
 ### Tower of Dawn
+### Kingdom of Ash
+### God Emperor of Dune
+### Project Hail Mary
 
 ## 2024
 
