@@ -1,5 +1,5 @@
 \-
 ========================
 
-i write code for a grocery retailer
+i write code for a fintech company
 
