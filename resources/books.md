@@ -3,7 +3,7 @@
 
 ## In Progress
 
-### Heretics of Dune
+### House of Earth and Blood
 
 ## 2025
 
@@ -19,6 +19,8 @@
 ### God Emperor of Dune
 ### Project Hail Mary
 ### I, Robot
+### Heretics of Dune
+### Sword of Kaigen
 
 ## 2024
 
