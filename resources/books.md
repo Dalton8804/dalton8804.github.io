@@ -3,7 +3,7 @@
 
 ## In Progress
 
-### House of Earth and Blood
+### House of Sky and Breath
 
 ## 2025
 
@@ -18,9 +18,12 @@
 ### Kingdom of Ash
 ### God Emperor of Dune
 ### Project Hail Mary
+### The Housemaid
 ### I, Robot
 ### Heretics of Dune
 ### Sword of Kaigen
+### House of Earth and Blood
+### Dark Matter
 
 ## 2024
 
