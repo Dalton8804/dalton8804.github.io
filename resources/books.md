@@ -4,6 +4,7 @@
 ## In Progress
 
 ### House of Sky and Breath
+### Algorithms to Live By
 
 ## 2025
 
