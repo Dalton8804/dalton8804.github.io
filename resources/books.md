@@ -3,28 +3,34 @@
 
 ## In Progress
 
-### House of Sky and Breath
 ### Algorithms to Live By
+### Stoner
+
+## 2026
+
+### House of Flame and Shadow
+### I Who Have Never Known Men
+### House of Sky and Breath
 
 ## 2025
 
-### Children of Dune
-### Crown of Midnight
-### Thinking in Systems: A Primer
-### Heir of Fire
-### Assassin's Blade
-### Queen of Shadows
-### Empire of Storms
-### Tower of Dawn
-### Kingdom of Ash
-### God Emperor of Dune
-### Project Hail Mary
-### The Housemaid
-### I, Robot
-### Heretics of Dune
-### Sword of Kaigen
-### House of Earth and Blood
 ### Dark Matter
+### House of Earth and Blood
+### Sword of Kaigen
+### Heretics of Dune
+### I, Robot
+### The Housemaid
+### Project Hail Mary
+### God Emperor of Dune
+### Kingdom of Ash
+### Tower of Dawn
+### Empire of Storms
+### Queen of Shadows
+### Assassin's Blade
+### Heir of Fire
+### Thinking in Systems: A Primer
+### Crown of Midnight
+### Children of Dune
 
 ## 2024
 
