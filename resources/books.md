@@ -4,10 +4,10 @@
 ## In Progress
 
 ### Algorithms to Live By
-### Stoner
 
 ## 2026
 
+### Stoner
 ### House of Flame and Shadow
 ### I Who Have Never Known Men
 ### House of Sky and Breath
