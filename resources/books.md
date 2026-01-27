@@ -7,6 +7,7 @@
 
 ## 2026
 
+### A Short Stay in Hell
 ### Stoner
 ### House of Flame and Shadow
 ### I Who Have Never Known Men
