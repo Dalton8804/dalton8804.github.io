@@ -1,0 +1,140 @@
+:root {
+  --foreground-color: 0,0,0;
+  --background-color: 255,255,255;
+}
+
+html {
+  background-color: rgb(var(--background-color));
+  color: rgb(var(--foreground-color));
+  font-size: 16px;
+  letter-spacing: .33px;
+  line-height: 1.15;
+}
+
+body {
+  margin: 0;
+  font-weight: 400;
+  font-family: 'JetBrains Mono';
+}
+
+header {
+  font-size: 20px;
+}
+
+main {
+  display: flex;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+a {
+  color: rgb(var(--foreground-color));
+}
+
+#main-container {
+  padding: 1rem;
+}
+
+#main-content {
+  display: block;
+  font-size: .9rem;
+}
+
+aside ul {
+  text-align: right;
+  list-style-type: none;
+}
+
+aside li {
+  margin: .75em 0;
+}
+
+aside li:hover {
+  cursor: pointer;
+}
+
+aside {
+  display: block;
+  flex: 0 0 12rem;
+  font-size: .90em;
+}
+
+#mobile-menu {
+  display: none;
+  padding: 1rem;
+  text-align: right;
+}
+
+#mobile-menu p {
+  cursor: pointer;
+}
+
+#mobile-menu-icon {
+  display: none;
+  width: 2rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: x-large;
+}
+
+.toggle {
+  z-index: 1;
+  width: 2rem;
+  position: fixed;
+  right: 1rem;
+  /* top: 1rem; */
+  /* background-color: var(--background-color); */
+  border: solid rgb(var(--foreground-color));
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: x-large;
+}
+
+#theme-toggle {
+  top: 1rem;
+}
+
+#exit-fish-play {
+  top: 1rem;
+  display: none;
+} 
+
+@media (max-width: 768px) {
+  .right-aside {
+    display: none;
+  }
+
+  .left-aside {
+    top: 1rem;
+    right: 1rem;
+    flex: 0 0 1rem;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(var(--background-color));
+    border: solid rgb(var(--foreground-color));
+    border-radius: 5px;
+    opacity: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  #mobile-menu-icon {
+    display: block;
+  }
+
+  #theme-toggle {
+    top: 3.5rem;
+    padding-bottom: 2px;
+  }
+}
+
+/* blog details */
+details {
+  padding: 1rem;
+}
