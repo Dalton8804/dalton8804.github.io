@@ -43,6 +43,7 @@ function themeTog() {
     root.style.setProperty('--foreground-color', '255,255,255');
     root.style.setProperty('--background-color', '0,0,0');
   }
+  localStorage.setItem("fishTheme", themeIcon.innerText);
 }
 
 function bodyToggle(sw) {
@@ -73,5 +74,10 @@ onresize = () => {
     mobileMenuIcon.innerText = '≡'
   } 
 } 
+
+if (localStorage.getItem("fishTheme") === '◑') {
+  themeTog();
+}
+
 
 load('home');

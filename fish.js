@@ -14,6 +14,17 @@ class Spine {
         } 
     }
 
+    static reconstruct(origin, jointRadii, linksize, joints) {
+        let spine = new Spine(origin, jointRadii, linksize);
+        spine.linksize = linksize;
+        spine.jointRadii = jointRadii;
+    
+        for (let i=0; i<spine.jointRadii.length; ++i) {
+            spine.joints[i] = Joint.reconstruct(joints[i].x, joints[i].y, joints[i].angle, spine.jointRadii[i]);
+        } 
+        return spine;
+    }
+
     resolveAngle(target, speed) {
         this.joints[0].update(target, speed)
 
@@ -59,6 +70,12 @@ class Joint {
         this.y = y;
         this.angle = 0;
         this.radius = radius;
+    }
+
+    static reconstruct(x, y, angle, radius) {
+        let joint = new Joint(x,y,radius);
+        joint.angle = angle;
+        return joint;
     }
 
     get heading() {
@@ -193,7 +210,7 @@ class Fish {
     constructor(context, origin) {
         this.context = context;
         this.spine = new Spine(origin, [34, 40, 42, 41, 38, 32, 25, 19, 16, 10], 32);
-        this._target = this.#newTarget;
+        this._target = this.newTarget;
 
         this.bodycolor = "#1d4863";
         this.fincolor = "#219e9a";
@@ -202,6 +219,18 @@ class Fish {
         this.speedTarget = 4;
         this.speedIncrement = .05;
         this.timeSinceLastTargetHit = 0;
+    }
+
+    static reconstruct(context, origin, spine, speed, speedTarget, speedIncrement, timeSinceLastTargetHit) {
+        let fish = new Fish(context, origin);
+        fish.spine = Spine.reconstruct(origin, spine.jointRadii, spine.linksize, spine.joints);
+        fish._target = fish.newTarget;
+        
+        fish.speed = speed;
+        fish.speedTarget = speedTarget;
+        fish.speedIncrement = speedIncrement;
+        fish.timeSinceLastTargetHit = timeSinceLastTargetHit;
+        return fish;
     }
 
     get strokeColor() {
@@ -379,7 +408,7 @@ class Fish {
     resolve() {
         let headPos = this.spine.joints[0];
         if (Joint.dist(this._target, headPos) < 40 || this.timeSinceLastTargetHit > 400) {
-            this._target = this.#newTarget;
+            this._target = this.newTarget;
             this.timeSinceLastTargetHit = 0;
         }
         
@@ -395,7 +424,7 @@ class Fish {
         this.timeSinceLastTargetHit++;
     }
     
-    get #newTarget() {
+    get newTarget() {
         this.speedTarget = Math.random() * 7 + 4;
         let temp = new Joint(Math.random() * window.innerWidth, Math.random() * window.innerHeight, 5);
         while (Joint.dist(temp, this.spine.joints[0]) < 400) {
@@ -430,10 +459,27 @@ function getCursorPosition(canvas, event) {
 }
 let target = new Joint(midpoint_x-500, midpoint_y-200, 0)
 
-let fishList = [new Fish(ctx, {x: midpoint_x, y: midpoint_y})]
+let prevFish = JSON.parse(localStorage.getItem("fish"));
+console.log(prevFish);
 
-if (window.innerWidth > 500)
-    fishList.push(...[new Fish(ctx, {x: midpoint_x, y: midpoint_y}),new Fish(ctx, {x: midpoint_x, y: midpoint_y})]);
+let fishList;
+
+if (prevFish === null) {
+    fishList = [new Fish(ctx, {x: midpoint_x, y: midpoint_y})] 
+    if (window.innerWidth > 500)
+        fishList.push(...[new Fish(ctx, {x: midpoint_x, y: midpoint_y}),new Fish(ctx, {x: midpoint_x, y: midpoint_y})]);
+} else {
+    fishList = prevFish.map((fish) => Fish.reconstruct(
+        ctx, 
+        origin, 
+        fish.spine, 
+        fish.speed, 
+        fish.speedTarget, 
+        fish.speedIncrement, 
+        fish.timeSinceLastTargetHit))
+    console.log("fishList")
+    console.log(fishList)
+}
 
 let paused = false;
 
@@ -448,6 +494,7 @@ let game = setInterval(() => {
             fish.resolve();
             fish.draw();
         })
+        localStorage.setItem("fish", JSON.stringify(fishList));
     }
 }, 16)
 
