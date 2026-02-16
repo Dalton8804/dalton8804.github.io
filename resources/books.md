@@ -7,6 +7,7 @@
 
 ## 2026
 
+### Software Engineering after the Vibe Shift
 ### A Short Stay in Hell
 ### Stoner
 ### House of Flame and Shadow
