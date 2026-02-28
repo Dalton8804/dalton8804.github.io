@@ -7,6 +7,7 @@ export default function Books() {
             <h3>Algorithms to Live By</h3>
 
             <h2>2026</h2>
+            <h3>Software Engineering after the Vibe Shift</h3>
             <h3>A Short Stay in Hell</h3>
             <h3>Stoner</h3>
             <h3>House of Flame and Shadow</h3>
