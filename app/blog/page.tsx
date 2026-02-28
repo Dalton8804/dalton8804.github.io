@@ -7,18 +7,12 @@ export const blogPosts = [
         year: "2025",
         slug: "hello-world",
         title: "Hello World",
-        date: "2025-01-15",
-        summary: "A first blog post to kick things off.",
+        date: "2026-02-27",
+        summary: "Hello world - my first blog post",
         content: (
             <>
                 <p>
-                    This is a sample blog post. When porting over posts from another site,
-                    create a new entry in the <code>blogPosts</code> array in{" "}
-                    <code>app/blog/page.tsx</code> with the content as JSX, or create
-                    individual page files under <code>app/blog/[year]/[slug]/page.tsx</code>.
-                </p>
-                <p>
-                    Each post lives at its own URL like <code>/blog/2025/hello-world</code>.
+                    Please go play with the <Link href={`/fish`}>fish</Link>, they get lonely.
                 </p>
             </>
         ),
