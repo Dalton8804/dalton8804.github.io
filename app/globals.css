@@ -110,6 +110,7 @@ aside {
 
 #theme-toggle {
   top: 1rem;
+  user-select: none;
 }
 
 /* Right aside spacer */
