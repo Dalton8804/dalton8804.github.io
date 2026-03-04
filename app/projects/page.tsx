@@ -4,8 +4,6 @@ import Link from "next/link";
 export default function Projects() {
     return (
         <PageShell title="projects">
-            <blockquote>pictures + links to source coming soon</blockquote>
-
             <h2>Personal</h2>
 
             <h3><a href="https://github.com/Dalton8804/NoteDrop" target="_blank" rel="noopener noreferrer">NoteDrop</a></h3>
