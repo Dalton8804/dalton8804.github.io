@@ -30,7 +30,7 @@ export default function Blog() {
 
     return (
         <PageShell title="blog">
-            <blockquote><Link href="/blog/blogroll">blogs I am reading &gt;</Link></blockquote>
+            <blockquote><Link href="/blog/roll">blogs I am reading &gt;</Link></blockquote>
             {years.length === 0 ? (
                 <blockquote>first post coming soon</blockquote>
             ) : (
