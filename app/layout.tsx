@@ -1,6 +1,7 @@
 import "./globals.css";
 import FishBase from "@/components/FishBase";
 import Sidebar from "@/components/Sidebar";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "dalton avery",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Analytics />
         <FishBase>
           <div id="body-main">
             <Sidebar />
