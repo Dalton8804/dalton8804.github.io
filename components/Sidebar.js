@@ -12,6 +12,7 @@ export default function Sidebar() {
     const links = [
         { href: "/", label: "home" },
         { href: "/projects", label: "projects" },
+        { href: "/quotes", label: "quotes"},
         { href: "/books", label: "books" },
         { href: "/blog", label: "blog" },
         { href: "/fish", label: "fish" },
