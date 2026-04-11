@@ -75,9 +75,11 @@ export default function Sidebar() {
             </aside>
 
             {/* Theme toggle */}
-            <div id="theme-toggle" className="toggle" onClick={toggleTheme}>
-                {darkMode ? "◐" : "◑"}
-            </div>
+            { !mobileOpen && (
+                <div id="theme-toggle" className="toggle" onClick={toggleTheme}>
+                    {darkMode ? "◐" : "◑"}
+                </div>
+            )}
         </>
     );
 }

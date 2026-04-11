@@ -5,7 +5,7 @@ export default function Books() {
     return (
         <PageShell title="books">
             <blockquote>Sometimes, immersed in his books, there would come to him the awareness of all that he did not know, of all that he had not read; and the serenity for which he labored was shattered as he realized the little time he had in life to read so much, to learn what he had to know. - John Williams, Stoner</blockquote>
-            <blockquote><Link href="/books/quotes">more of my favorite quotes &gt;</Link></blockquote>
+            <blockquote><Link href="/quotes">more of my favorite quotes &gt;</Link></blockquote>
 
             <h2>In Progress</h2>
             <h3>Algorithms to Live By</h3>
