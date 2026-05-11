@@ -8,11 +8,11 @@ export const blogPosts = [
         slug: "hello-world",
         title: "Hello World",
         date: "2026-02-27",
-        summary: "Hello world - my first blog post",
+        summary: "Hello world",
         content: (
             <>
                 <p>
-                    Please go play with the <Link href={`/fish`}>fish</Link>, they get lonely.
+                    go play with the <Link href={`/fish`}>fish</Link>
                 </p>
             </>
         ),
