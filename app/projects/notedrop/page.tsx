@@ -8,7 +8,6 @@ export default function NoteDrop() {
             <img
                 src="/assets/NoteDropScreenshot.png"
                 alt="NoteDrop menubar window"
-                style={{ width: "100%", height: "auto" }}
             />
             <p>the menubar window in action.</p>
 
@@ -19,14 +18,6 @@ export default function NoteDrop() {
             </ul>
             <p>not sure which one? apple menu → about this mac. a chip that starts with &quot;M&quot; (apple silicon) is arm64; an &quot;intel&quot; chip is x64.</p>
             <p>requires macOS 11 or later. <br /><a href="https://github.com/Dalton8804/NoteDrop/releases/latest" target="_blank" rel="noopener noreferrer">release notes &amp; older versions</a></p>
-
-            <h2>Build It Yourself</h2>
-            <blockquote>
-                git clone https://github.com/Dalton8804/NoteDrop.git<br />
-                npm install<br />
-                npm run make<br />
-                move NoteDrop from out/ to your Applications folder
-            </blockquote>
 
             <h2>Usage</h2>
             <ul>

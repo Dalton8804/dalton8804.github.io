@@ -27,7 +27,7 @@ header {
   display: flex;
   max-width: 80rem;
   margin: 0 auto;
-  justify-content: center;
+  justify-content: safe center;
 }
 
 a {
@@ -43,12 +43,19 @@ a:hover {
   padding: 1rem;
   flex: 1;
   max-width: 40rem;
+  min-width: 0;
   background-color: rgba(var(--background-color), 0.5);
 }
 
 #main-content {
   display: block;
   font-size: .9rem;
+  overflow-wrap: break-word;
+}
+
+#main-content img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Sidebar */
