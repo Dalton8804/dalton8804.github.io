@@ -6,7 +6,7 @@ export default function Projects() {
         <PageShell title="projects">
             <h2>Personal</h2>
 
-            <h3><a href="https://github.com/Dalton8804/NoteDrop" target="_blank" rel="noopener noreferrer">NoteDrop</a></h3>
+            <h3><Link href="/projects/notedrop">NoteDrop</Link></h3>
 
             <h3><a href="https://thuum.daltonavery.com/" target="_blank" rel="noopener noreferrer">Thu&apos;um</a></h3>
 
