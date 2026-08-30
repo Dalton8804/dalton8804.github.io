@@ -8,9 +8,11 @@ export default function Books() {
             <blockquote><Link href="/quotes">more of my favorite quotes &gt;</Link></blockquote>
 
             <h2>In Progress</h2>
-            <h3>Algorithms to Live By</h3>
+            <h3>The Philosopher in the Valley</h3>
 
             <h2>2026</h2>
+            <h3>Dopamine Detox</h3>
+            <h3>Algorithms to Live By</h3>
             <h3>Butcher's Crossing</h3>
             <h3>Train Dreams</h3>
             <h3>Software Engineering after the Vibe Shift</h3>
